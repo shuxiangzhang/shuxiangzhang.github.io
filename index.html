@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuxiang Zhang | Personal Portfolio</title>
+    <meta name="description" content="Personal portfolio of Shuxiang Zhang - Showcasing skills, projects, and professional career.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo">SZ.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1><span>Hi, I'm Shuxiang Zhang</span></h1>
+        <p>An AI Engineer specializing in agentic systems, multi-agent orchestration, and deploying scalable cognitive architectures that bridge the gap between research and production.</p>
+        <div class="cta-group">
+            <a href="#about" class="btn btn-primary">Core Research</a>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <h2 class="section-title">Agentic & Intelligence</h2>
+        <div class="card">
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                I specialize in the design of autonomous agentic systems and complex multi-agent orchestration. From fine-tuning specialized models to architecting distributed reasoning chains, I build AI that doesn't just predict, but acts.
+            </p>
+            <p>
+                My current research focuses on long-context retrieval (RAG), self-correcting agent loops, and the reliable deployment of multi-agent swarms. I believe the next frontier of intelligence lies in collaborative, goal-oriented autonomy.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Core Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <i data-lucide="brain" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 10px;">Agentic Systems</h3>
+                <p style="color: var(--text-secondary);">Designing autonomous agents, implementing multi-agent orchestration frameworks, and building self-evolving reasoning loops.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="layers" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 10px;">LLM Orchestration</h3>
+                <p style="color: var(--text-secondary);">Fine-tuning models for tool-use, optimizing RAG pipelines, and managing complex state across distributed cognitive tasks.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="sparkles" style="color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 10px;">AI Infrastructure</h3>
+                <p style="color: var(--text-secondary);">Building low-latency inference engines and high-throughput data processing to support real-time agentic workflows.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2026 Shuxiang Zhang. Built with ❤️ and Modern Web Tech.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Simple Scroll Animation
+        const sections = document.querySelectorAll('.section, .card');
+        const options = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
